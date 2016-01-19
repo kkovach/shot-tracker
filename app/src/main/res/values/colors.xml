@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#FF30BF38</color>
+    <color name="primaryDark">#FF207F26</color>
+    <color name="primaryAccent">#FF40FF4B</color>
+    <color name="content_background">#fffafafa</color>
+    <color name="text_color_primary">#dd000000</color>
+    <color name="text_color_secondary">#89000000</color>
+    <color name="avatar_stroke">#1a000000</color>
+    <color name="timespan_title_text">#ffffffff</color>
+    <color name="selectable_background_pressed">#1f000000</color>
+</resources>
