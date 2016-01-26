@@ -20,8 +20,8 @@ import butterknife.ButterKnife;
  */
 public class CourseLocationsFragment extends Fragment implements CourseLocationsView {
 
-    @Bind(R.id.list)
-    RecyclerView mCourseLocationList;
+    @Bind(R.id.courseContactList)
+    RecyclerView mCourseContactList;
 
     private CourseLocationsPresenter mCourseLocationsPresenter;
 
@@ -35,8 +35,8 @@ public class CourseLocationsFragment extends Fragment implements CourseLocations
 
         mCourseLocationsPresenter = new CourseLocationsPresenterImpl(this);
 
-        mCourseLocationList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mCourseLocationList.setAdapter(new CourseLocationsAdapter(null));
+        mCourseContactList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mCourseContactList.setAdapter(new CourseLocationsAdapter(null));
 
         return view;
     }

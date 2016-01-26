@@ -18,8 +18,8 @@ import butterknife.ButterKnife;
  */
 public class GolfersFragment extends Fragment implements GolfersView {
 
-    @Bind(R.id.list)
-    RecyclerView mCourseLocationList;
+    @Bind(R.id.golferList)
+    RecyclerView mGolferList;
 
     private GolfersPresenter mCourseLocationsPresenter;
 
@@ -27,14 +27,14 @@ public class GolfersFragment extends Fragment implements GolfersView {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_courselocation_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_golfer_list, container, false);
 
         ButterKnife.bind(this, view);
 
         mCourseLocationsPresenter = new GolfersPresenterImpl(this);
 
-        mCourseLocationList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mCourseLocationList.setAdapter(new GolfersAdapter(null));
+        mGolferList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mGolferList.setAdapter(new GolfersAdapter(null));
 
         return view;
     }

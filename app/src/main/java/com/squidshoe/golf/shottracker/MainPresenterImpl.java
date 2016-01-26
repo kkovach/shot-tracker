@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.squidshoe.golf.shottracker.courses.AddCourseLocationFragment;
 import com.squidshoe.golf.shottracker.courses.CourseLocationsFragment;
 import com.squidshoe.golf.shottracker.golfers.GolfersFragment;
 
@@ -46,5 +47,24 @@ public class MainPresenterImpl implements MainPresenter {
         mMainView.closeNavigationDrawer();
 
         return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        Fragment fragment;
+        String title;
+
+        // Handle item selection
+        switch (item.getItemId()) {
+
+            case R.id.addCourseLocation:
+                fragment = new AddCourseLocationFragment();
+                mMainView.showFragment(fragment);
+                title = "Add Course Contact";
+                mMainView.setTitle(title);
+                return true;
+            default:
+                return false;
+        }
     }
 }

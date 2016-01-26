@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -80,6 +81,12 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        return mMainPresenter.onOptionsItemSelected(item);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         if (mCurrentFragment != null) {
@@ -101,6 +108,11 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showFragment(Fragment fragment) {
+
+        if(mCurrentFragment != null)
+        Log.d(TAG, "Replacing fragment " + mCurrentFragment.getClass().getSimpleName() + " with " + fragment.getClass().getSimpleName());
+        else
+            Log.d(TAG, "Adding fragment " + fragment.getClass().getSimpleName());
 
         mCurrentFragment = fragment;
 
