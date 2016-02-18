@@ -3,9 +3,7 @@ package com.squidshoe.golf.model;
 /**
  * Created by kkovach on 7/15/15.
  */
-public class CourseLocation {
-
-    public static final String TABLE = "courseLocation";
+public class Clubhouse {
 
     public static final String ID = "_id";
     public static final String NAME = "name";
@@ -26,4 +24,9 @@ public class CourseLocation {
     public String url;
     public String email;
     public String phone;
+
+    public String toString() {
+
+        return name;
+    }
 }

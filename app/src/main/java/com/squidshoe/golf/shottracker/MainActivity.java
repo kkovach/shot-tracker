@@ -16,7 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.squidshoe.golf.shottracker.courses.CourseLocationsFragment;
+import com.squidshoe.golf.shottracker.courses.ClubhousesFragment;
 
 import javax.inject.Inject;
 
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
             Log.d(TAG, "Fragment class is " + mCurrentFragment.getClass().getSimpleName());
 
-            if (mCurrentFragment instanceof CourseLocationsFragment)
+            if (mCurrentFragment instanceof ClubhousesFragment)
                 getMenuInflater().inflate(R.menu.course_location, menu);
         }
 

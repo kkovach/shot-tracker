@@ -1,6 +1,7 @@
-package com.squidshoe.golf.shottracker.golfers;
+package com.squidshoe.golf.shottracker.courses;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,13 @@ import rx.functions.Action1;
 /**
  * Created by kkovach on 1/18/16.
  */
-public class GolfersAdapter extends RecyclerView.Adapter<GolferViewHolder> implements Action1<List<Clubhouse>> {
+public class ClubhousesAdapter extends RecyclerView.Adapter<ClubhouseViewHolder> implements Action1<List<Clubhouse>> {
+
+    private static final String TAG = "ClubhousesAdapter";
 
     ArrayList<Clubhouse> mClubhouseList;
 
-    public GolfersAdapter(ArrayList<Clubhouse> clubhouseList) {
+    public ClubhousesAdapter(ArrayList<Clubhouse> clubhouseList) {
 
         mClubhouseList = new ArrayList<>();
         if (clubhouseList != null)
@@ -28,21 +31,24 @@ public class GolfersAdapter extends RecyclerView.Adapter<GolferViewHolder> imple
     }
 
     @Override
-    public GolferViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ClubhouseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_location_item, parent, false);
 
         // set the view's size, margins, paddings and layout parameters
-        return new GolferViewHolder(v);
+        return new ClubhouseViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(GolferViewHolder holder, int position) {
+    public void onBindViewHolder(ClubhouseViewHolder holder, int position) {
 
         Clubhouse clubhouse = mClubhouseList.get(position);
         holder.mCourseName.setText(clubhouse.name);
         holder.mCourseAddress.setText(clubhouse.address);
+        holder.mCourseCity.setText(clubhouse.city);
+        holder.mCourseState.setText(clubhouse.state);
+        holder.mCourseZip.setText(clubhouse.zip);
     }
 
     @Override

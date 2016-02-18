@@ -1,12 +1,10 @@
 package com.squidshoe.golf.shottracker;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.squidshoe.golf.shottracker.courses.AddCourseLocationFragment;
-import com.squidshoe.golf.shottracker.courses.CourseLocationsFragment;
+import com.squidshoe.golf.shottracker.courses.AddClubhouseFragment;
+import com.squidshoe.golf.shottracker.courses.ClubhousesFragment;
 import com.squidshoe.golf.shottracker.golfers.GolfersFragment;
 
 /**
@@ -30,7 +28,7 @@ public class MainPresenterImpl implements MainPresenter {
         switch (item.getItemId()) {
 
             case R.id.navCourses:
-                fragment = new CourseLocationsFragment();
+                fragment = new ClubhousesFragment();
                 title = "Courses";
                 break;
             case R.id.navGolfers:
@@ -58,7 +56,7 @@ public class MainPresenterImpl implements MainPresenter {
         switch (item.getItemId()) {
 
             case R.id.addCourseLocation:
-                fragment = new AddCourseLocationFragment();
+                fragment = new AddClubhouseFragment();
                 mMainView.showFragment(fragment);
                 title = "Add Course Contact";
                 mMainView.setTitle(title);

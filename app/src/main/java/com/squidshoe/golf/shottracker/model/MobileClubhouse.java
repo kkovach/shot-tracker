@@ -1,14 +1,41 @@
 package com.squidshoe.golf.shottracker.model;
 
-import com.squidshoe.golf.model.CourseLocation;
-
 import android.content.ContentValues;
+import android.database.Cursor;
+import android.util.Log;
+
+import com.squidshoe.golf.model.Clubhouse;
+import com.squidshoe.golf.shottracker.db.Db;
+
+import rx.functions.Func1;
 
 /**
  * Created by kkovach on 7/15/15.
  */
-public class MobileCourseLocation extends CourseLocation {
+public class MobileClubhouse extends Clubhouse {
 
+    private static final String TAG = "MobileClubhouse";
+
+    public static final String TABLE = "clubhouse";
+    public static final String QUERY = "SELECT " + NAME + ", " + ADDRESS + ", " + CITY + ", " + STATE + ", " + ZIP + " FROM " + TABLE;
+
+    public static final Func1<Cursor, Clubhouse> MAPPER = new Func1<Cursor, Clubhouse>() {
+
+        @Override
+        public Clubhouse call(Cursor cursor) {
+
+            Log.i(TAG, "Got cursor with " + cursor.getCount());
+
+            Clubhouse clubhouse = new Clubhouse();
+            clubhouse.name = Db.getString(cursor, NAME);
+            clubhouse.address = Db.getString(cursor, ADDRESS);
+            clubhouse.city = Db.getString(cursor, CITY);
+            clubhouse.state = Db.getString(cursor, STATE);
+            clubhouse.zip = Db.getString(cursor, ZIP);
+
+            return clubhouse;
+        }
+    };
 
     public static final class Builder {
 

@@ -7,7 +7,7 @@ import android.app.Application;
  */
 public class ShotTrackerApplication extends Application {
 
-    private ApplicationComponent mComponent;
+    private static ApplicationComponent mComponent;
 
     @Override
     public void onCreate() {
@@ -17,7 +17,7 @@ public class ShotTrackerApplication extends Application {
         mComponent = DaggerApplicationComponent.builder().applicationModule(new ApplicationModule(this)).build();
     }
 
-    public ApplicationComponent getComponent() {
+    public static ApplicationComponent getComponent() {
 
         return mComponent;
     }

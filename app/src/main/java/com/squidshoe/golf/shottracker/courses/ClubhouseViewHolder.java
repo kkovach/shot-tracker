@@ -12,14 +12,20 @@ import butterknife.ButterKnife;
 /**
  * Created by kkovach on 1/18/16.
  */
-public class CourseLocationViewHolder extends RecyclerView.ViewHolder {
+public class ClubhouseViewHolder extends RecyclerView.ViewHolder {
 
     @Bind(R.id.courseName)
     TextView mCourseName;
     @Bind(R.id.courseAddress)
     TextView mCourseAddress;
+    @Bind(R.id.courseCity)
+    TextView mCourseCity;
+    @Bind(R.id.courseState)
+    TextView mCourseState;
+    @Bind(R.id.courseZip)
+    TextView mCourseZip;
 
-    public CourseLocationViewHolder(View v) {
+    public ClubhouseViewHolder(View v) {
 
         super(v);
         ButterKnife.bind(this, v);

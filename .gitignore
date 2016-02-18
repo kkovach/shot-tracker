@@ -1,0 +1,49 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# Backup files
+*.hold
+*.old
+*.*~
+
+# generated files
+bin/
+gen/
+libs/
+target/
+.settings/
+docs_dist/
+# Libraries
+libs/
+apidocs
+
+# Local configuration file (sdk path, etc)
+local.properties
+project.properties
+gradle.properties
+
+# Eclipse project files
+.classpath
+.project
+
+# Android Studio stuff
+*.iml
+.idea/
+CatalistMobileCore/src/main/com/findawayworld/catalistdigital/mobile/core/Data.txt
+
+# Gradle stuff
+.gradle/
+build/
+
+# Testing stuff
+*.ec
+
+# Mac Stuff
+.DS_Store
